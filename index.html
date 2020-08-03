@@ -6,9 +6,12 @@
   <title>Diego Bracho</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="css/media.css" media="screen and (max-width:768px)">
+  <link rel="stylesheet" href="css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   </head>
   <body>
+    <i class="icon-Menu burger-button" id="burger-menu"></i>
     <header class="header"> 
       <div class="container">
         <figure class="logo">
@@ -87,37 +90,37 @@
               <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
               <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
             </div>
-            </article>
-            <article class="event">
-              <figure class="event-imageConteiner">
-                <img class="event-image" src="./Imagenes/piano.jpg" width="500" alt="Piano">
-              </figure>
-              <div class="event-detail">       
-                <h3 class="event-tittle">Presentacion de piano 2015</h3>
-                <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
-                <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
-              </div>
-              </article>
-              <article class="event">
-                <figure class="event-imageConteiner">
-                  <img class="event-image" src="./Imagenes/piano.jpg" width="500" alt="Piano">
-                </figure>
-                <div class="event-detail">       
-                  <h3 class="event-tittle">Presentacion de piano 2015</h3>
-                  <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
-                  <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
-                </div>
-                </article>
-                <article class="event">
-                  <figure class="event-imageConteiner">
-                    <img class="event-image" src="./Imagenes/piano.jpg" width="500" alt="Piano">
-                  </figure>
-                  <div class="event-detail">       
-                    <h3 class="event-tittle">Presentacion de piano 2015</h3>
-                    <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
-                    <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
-                  </div>
-                  </article>
+          </article>
+          <article class="event">
+            <figure class="event-imageConteiner">
+              <img class="event-image" src="./Imagenes/piano.jpg" width="500" alt="Piano">
+            </figure>
+            <div class="event-detail">       
+              <h3 class="event-tittle">Presentacion de piano 2015</h3>
+              <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
+              <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
+            </div>
+          </article>
+          <article class="event">
+            <figure class="event-imageConteiner">
+              <img class="event-image" src="./Imagenes/piano.jpg" width="500" alt="Piano">
+            </figure>
+            <div class="event-detail">       
+              <h3 class="event-tittle">Presentacion de piano 2015</h3>
+              <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
+              <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
+            </div>
+          </article>
+          <article class="event">
+            <figure class="event-imageConteiner">
+              <img class="event-image" src="./Imagenes/piano.jpg" width="500" alt="Piano">
+            </figure>
+            <div class="event-detail">       
+              <h3 class="event-tittle">Presentacion de piano 2015</h3>
+              <p class="event-description">Presentacion realizada en Valencia,con el profesor Juan Carlos Muñoz Meier</p>
+              <a class="event-url" href="https://youtu.be/u9BipzFokhQ" target="_blank">Ver Video</a>
+            </div>
+          </article>
         </div>
       </section>
       <section id="contacto" class="contact">
@@ -128,9 +131,10 @@
             <button>Enviar</button>
           </form>
           <div class="social">
-            <a href="https://www.twitter.com/diegobracho25/" class="social-link twitter" target="_blank"></a>
-            <a href="https://www.facebook.com/diegobracho25/" class="social-link facebook" target="_blank"></a>
-            <a href="https://www.instagram.com/diegobracho25/" class="social-link instagram"target="_blank"></a>
+            <a href="https://www.twitter.com/diegobracho25/" class="social-link twitter" target="_blank"><img src="./Imagenes/twitter.png" width="50px" alt=""></a>
+            <a href="https://www.facebook.com/diegobracho25/" class="social-link facebook" target="_blank"><img src="./Imagenes/facebook.png" width="50px" alt=""></a>
+            <a href="https://www.instagram.com/diegobracho25/" class="social-link instagram"target="_blank"><img src="./Imagenes/instagram.png" width="50px" alt=""></a>
+            <a href="https://diego02411.github.io/" class="social-link github"target="_blank"><img src="./Imagenes/github.png" width="50px" alt=""></a>
           </div>
         </div>
       </section>
@@ -145,6 +149,33 @@
           </div>
         </div>
       </footer>
-    </div>
+      <script>
+        const menu = document.querySelector(".menu");
+        console.log(window.matchMedia("screen and (max-width: 767px)"))
+        const burgerButton = document.querySelector("#burger-menu");
+        const ipad = window.matchMedia("screen and (max-width: 767px)");
+
+
+        ipad.addListener(validation);
+
+        function validation(event) {
+          if (event.matches) {
+            burgerButton.addEventListener("click",hideShow);
+          }
+          else {
+            burgerButton.removeEventListener("click",hideShow);
+          }
+        }
+        validation(ipad);
+
+        function hideShow () {
+          if (menu.classList.contains("is-active")) {
+            menu.classList.remove("is-active");
+          }
+          else {
+            menu.classList.add("is-active");
+          }
+        }
+      </script>
   </body>
 </html>
